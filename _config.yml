@@ -30,3 +30,10 @@ defaults:
 
 exclude:
   - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .scripts/
+  - _posts/*.assets
+  - _notes/*.assets

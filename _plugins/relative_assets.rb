@@ -3,7 +3,7 @@
 require "fileutils"
 
 Jekyll::Hooks.register [:pages, :documents], :post_write do |item|
-  source_path = item.respond_to?(:path) ? item.path : item.relative_path
+  source_path = item.respond_to?(:relative_path) ? item.relative_path : item.path
   next if source_path.nil? || item.output.nil?
 
   source_file = File.join(item.site.source, source_path)
