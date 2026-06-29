@@ -27,16 +27,17 @@
 Windows 下可以直接双击 `upload-github.bat`，或在 PowerShell 中运行：
 
 ```powershell
-./upload-github
+./upload
 ```
 
 默认提交说明是 `Update Site`。如果要自定义提交说明，可以运行：
 
 ```powershell
-./upload-github "Update notes"
+./upload "Update notes"
 ```
 
 脚本会自动提交当前改动、同步远端 `main`，并推送到 GitHub。
+上传前还会自动同步文章和笔记的同名 `.assets` 图片目录，确保相对路径图片能在线上显示。
 
 ## 新建文章
 

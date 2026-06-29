@@ -11,8 +11,10 @@ function Run-Git {
   }
 }
 
-$repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$repoRoot = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $repoRoot
+
+& "$PSScriptRoot\sync-relative-assets.ps1"
 
 Run-Git status --short
 
