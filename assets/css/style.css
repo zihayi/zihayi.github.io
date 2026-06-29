@@ -192,6 +192,12 @@ blockquote {
   color: var(--muted);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
