@@ -22,6 +22,22 @@
 
 如果使用项目仓库而不是用户站点仓库，请在 `_config.yml` 中把 `baseurl` 改成 `"/repo-name"`。
 
+## 一键上传 GitHub
+
+Windows 下可以直接双击 `upload-github.bat`，或在 PowerShell 中运行：
+
+```powershell
+./upload-github
+```
+
+默认提交说明是 `Update Site`。如果要自定义提交说明，可以运行：
+
+```powershell
+./upload-github "Update notes"
+```
+
+脚本会自动提交当前改动、同步远端 `main`，并推送到 GitHub。
+
 ## 新建文章
 
 在 `_posts/` 下创建 Markdown 文件：
