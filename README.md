@@ -18,7 +18,7 @@
 1. 新建仓库，仓库名使用 `<your-github-username>.github.io`。
 2. 把本目录内容放到仓库根目录。
 3. 推送到 GitHub。
-4. 在仓库 `Settings > Pages` 中选择从默认分支发布。
+4. 在仓库 `Settings > Pages` 中选择 `GitHub Actions` 发布。
 
 如果使用项目仓库而不是用户站点仓库，请在 `_config.yml` 中把 `baseurl` 改成 `"/repo-name"`。
 
@@ -41,6 +41,19 @@ tags: [engineering]
 ---
 ```
 
+文章图片可以放在同目录的同名 `.assets` 文件夹里，例如：
+
+```text
+_posts/2026-06-29-welcome.md
+_posts/2026-06-29-welcome.assets/image.png
+```
+
+然后在 Markdown 中直接使用相对路径：
+
+```markdown
+![图片说明](./2026-06-29-welcome.assets/image.png)
+```
+
 ## 新建笔记
 
 在 `_notes/` 下创建任意 Markdown 文件：
@@ -58,3 +71,5 @@ description: 日常命令速查
 date: 2026-06-29
 ---
 ```
+
+笔记图片也可以使用同名 `.assets` 文件夹，例如 `_notes/linux-commands.assets/image.png`，并在笔记中写 `![图片说明](./linux-commands.assets/image.png)`。

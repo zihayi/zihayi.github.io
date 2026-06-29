@@ -9,9 +9,10 @@ title: Home
 
 <section class="hero-card">
   <p class="eyebrow">Latest</p>
-  <h2>保持简洁，持续沉淀。</h2>
+  <h2>日日渐进，必有所得。</h2>
   <p>文章适合完整主题，笔记适合短记录、命令片段、排错过程和阅读摘要。</p>
 </section>
+
 
 ## 最新文章
 
