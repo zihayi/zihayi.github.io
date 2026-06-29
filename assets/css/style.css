@@ -198,6 +198,14 @@ img {
   border-radius: 16px;
 }
 
+.article img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 720px);
+  max-height: 520px;
+  margin: 24px auto;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
