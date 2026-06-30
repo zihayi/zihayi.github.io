@@ -110,7 +110,7 @@ V-Seek: Efficient LLM Inference on 64-core RISC-V Platform. https://arxiv.org/ab
 （3）技术报告：对参赛作品技术报告包括作品链接、设计方案、实现方案、运行效果/测试结果、演示视频、特色创新等内容进行评审。
 
 作品要求
-详见主页《初赛作品提交说明》
+详见主页《初赛作品提交说明》。
 
 </details>
 
