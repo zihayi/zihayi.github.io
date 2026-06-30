@@ -1,25 +1,14 @@
 ---
-title: Camera项目究极魔改
-description: 我想做一个从相机驱动Bring-up到Camera Hal再到模型部署调优的完整链路的无损检测项目
-date: 2026-06-29
-tags: [blog][项目][秋招]
+title: 开源系统创新大赛项目
+description: 大赛记录
+date: 2026-06-230
+tags: [竞赛][项目][秋招][blog]
 ---
 
-# 前言
+比赛赛题：
 
-> 写在开头：我目前希望秋招最终在项目呈现上着重展示我profilling的能力，所以
->
-> 计划1：高通实习——写模型优化部署以及agent开发，如果可以的话还能加Camera Hal的内容；
->
-> 计划2：课题与中国操作系统创新大赛项目——目前在想是面向 RISC-V Vector 的大语言模型并发推理调度系统 还是 基于eBPF的系统异常观测与根因定位工具；
->
-> 计划3：国家重点研发项目——基于机器视觉的无损检测算法，驱动bringup Camera 模型调优
-
-## 1.计划3——开源系统创新大赛项目
-
-### 比赛赛题：
-
-~~~
+<details markdown="1">
+<summary>展开查看全部比赛赛题</summary>
 系统创新
 面向openEuler的自适应资源管控Agent（社区赛题）
 基于eBPF的系统异常观测与根因定位工具（社区赛题）
@@ -40,13 +29,18 @@ MaaS平台中模型混部的资源编排与性能优化（高校赛题）
 面向智能体的内存管理系统设计与实现（高校赛题）
 基于深度强化学习的云-边-端异构计算资源管理调度方法（高校赛题）
 面向开放环境的具身操作系统韧性增强技术 
-~~~
 
-### 面向 RISC-V Vector 扩展的大语言模型推理并发调度优化（高校赛题）
+</details>
 
-赛题描述：
+### 
 
-~~~
+# 面向 RISC-V Vector 扩展的大语言模型推理并发调度优化
+
+## 赛题完整描述：
+
+<details markdown="1">
+<summary>展开查看赛题完整描述原文</summary>
+
 RISC-V Vector 扩展（RVV 1.0）已被纳入 RVA23 Profile 强制规范（2024 年 10 月批准），正在成为 RISC-V 处理器的标准配置。2025 年初，llama.cpp 等主流大语言模型（LLM）推理框架完成了 RVV 1.0 适配，使得在 RISC-V 设备上运行 LLM 成为现实。
 
 然而，RVV 的引入带来了值得单独研究的操作系统调度挑战。x86 AVX-512 与 ARM SVE 等架构同样存在扩展状态上下文管理问题，但 RVV 的变长寄存器（VLEN 由实现定义，最大可达数千 bit）与 Vector Length Agnostic（VLA）设计使其系统代价与管理复杂度显著不同。在RISC-V 架构中，每个 hart 拥有 32 个向量寄存器（v0–v31），单次完整 V 状态保存需要512 字节至 1024 字节以上的内存写入。Linux 通过 VS 状态位配合惰性上下文管理策略（lazy save / restore）降低不必要的状态切换开销，但在多向量密集型线程并发运行时，当向量状态为 dirty 的线程被抢占，仍会触发 V 寄存器组的完整保存，在 LLM 推理这类高强度持续向量计算场景下积累出不可忽视的调度开销。
@@ -117,7 +111,8 @@ V-Seek: Efficient LLM Inference on 64-core RISC-V Platform. https://arxiv.org/ab
 
 作品要求
 详见主页《初赛作品提交说明》。 
-~~~
+
+</details>
 
 ## 🎯 核心问题与背景
 
@@ -179,9 +174,3 @@ V-Seek: Efficient LLM Inference on 64-core RISC-V Platform. https://arxiv.org/ab
 - **操作系统**：支持 openEuler、openKylin、OpenHarmony 等国内主流开源 OS。
 - **逻辑验证**：QEMU 9.x 仿真器（参数 `-cpu rv64,v=true,vlen=256`），用于 eBPF 和调度逻辑调试。
 - **性能评测**：SpacemiT K1 核心板设备（VLEN=256 真实硬件）。
-
-# 一、Camera项目
-
-## 1.资料
-
-[21 Camera驱动开发 | GearlessJoe的博客](https://li-ruiqi777.github.io/04-Linux/03-内核开发/21-Camera驱动开发.html)
