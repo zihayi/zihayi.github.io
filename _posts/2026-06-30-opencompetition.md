@@ -1,7 +1,7 @@
 ---
 title: 开源系统创新大赛项目
 description: 大赛记录
-date: 2026-06-20
+date: 2026-06-30
 tags: [竞赛, 项目, 秋招, blog]
 ---
 

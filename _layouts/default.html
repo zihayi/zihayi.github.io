@@ -18,7 +18,7 @@
       </nav>
     </header>
 
-    <main class="page-shell">
+    <main class="page-shell{% if page.collection == 'posts' %} page-shell--post{% endif %}">
       {{ content }}
     </main>
 

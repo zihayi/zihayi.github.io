@@ -2,13 +2,46 @@
 layout: default
 ---
 
-<article class="article">
-  <header class="article-header">
-    <p class="eyebrow">Post</p>
-    <h1>{{ page.title }}</h1>
-    <time>{{ page.date | date: "%Y-%m-%d" }}</time>
-    {% if page.description %}<p class="description">{{ page.description }}</p>{% endif %}
-  </header>
+<div class="post-layout">
+  <aside class="post-toc" aria-label="文档大纲" hidden>
+    <p class="post-toc-title">文档大纲</p>
+    <ol class="post-toc-list"></ol>
+  </aside>
 
-  {{ content }}
-</article>
+  <article class="article">
+    <header class="article-header">
+      <p class="eyebrow">Post</p>
+      <h1>{{ page.title }}</h1>
+      <time>{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% if page.description %}<p class="description">{{ page.description }}</p>{% endif %}
+    </header>
+
+    {{ content }}
+  </article>
+</div>
+
+<script>
+  (function () {
+    var article = document.querySelector(".article");
+    var toc = document.querySelector(".post-toc");
+    var list = document.querySelector(".post-toc-list");
+    if (!article || !toc || !list) return;
+
+    var headings = article.querySelectorAll("h2, h3");
+    if (!headings.length) return;
+
+    headings.forEach(function (heading, index) {
+      if (!heading.id) heading.id = "section-" + (index + 1);
+
+      var item = document.createElement("li");
+      var link = document.createElement("a");
+      item.className = "post-toc-item post-toc-item--" + heading.tagName.toLowerCase();
+      link.href = "#" + encodeURIComponent(heading.id);
+      link.textContent = heading.textContent;
+      item.appendChild(link);
+      list.appendChild(item);
+    });
+
+    toc.hidden = false;
+  })();
+</script>
