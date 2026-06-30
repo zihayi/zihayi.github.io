@@ -10,7 +10,7 @@ title: Home
 <section class="hero-card">
   <p class="eyebrow">Latest</p>
   <h2>日日渐进，必有所得。</h2>
-  <p>文章适合完整主题，笔记适合短记录、命令片段、排错过程和阅读摘要。</p>
+  <p>一些碎碎念，。</p>
 </section>
 
 
@@ -18,6 +18,7 @@ title: Home
 
 {% if site.posts.size > 0 %}
 {% for post in site.posts limit:5 %}
+
 - [{{ post.title }}]({{ post.url | relative_url }}) · {{ post.date | date: "%Y-%m-%d" }}
 {% endfor %}
 {% else %}
