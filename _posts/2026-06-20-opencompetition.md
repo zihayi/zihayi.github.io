@@ -1,14 +1,16 @@
 ---
 title: 开源系统创新大赛项目
 description: 大赛记录
-date: 2026-06-230
-tags: [竞赛][项目][秋招][blog]
+date: 2026-06-20
+tags: [竞赛, 项目, 秋招, blog]
 ---
 
 比赛赛题：
 
-<details markdown="1">
+<details>
 <summary>展开查看全部比赛赛题</summary>
+<pre style="white-space: pre-wrap;">
+
 系统创新
 面向openEuler的自适应资源管控Agent（社区赛题）
 基于eBPF的系统异常观测与根因定位工具（社区赛题）
@@ -30,16 +32,16 @@ MaaS平台中模型混部的资源编排与性能优化（高校赛题）
 基于深度强化学习的云-边-端异构计算资源管理调度方法（高校赛题）
 面向开放环境的具身操作系统韧性增强技术 
 
+</pre>
 </details>
-
-### 
 
 # 面向 RISC-V Vector 扩展的大语言模型推理并发调度优化
 
 ## 赛题完整描述：
 
-<details markdown="1">
+<details>
 <summary>展开查看赛题完整描述原文</summary>
+<pre style="white-space: pre-wrap;">
 
 RISC-V Vector 扩展（RVV 1.0）已被纳入 RVA23 Profile 强制规范（2024 年 10 月批准），正在成为 RISC-V 处理器的标准配置。2025 年初，llama.cpp 等主流大语言模型（LLM）推理框架完成了 RVV 1.0 适配，使得在 RISC-V 设备上运行 LLM 成为现实。
 
@@ -110,8 +112,9 @@ V-Seek: Efficient LLM Inference on 64-core RISC-V Platform. https://arxiv.org/ab
 （3）技术报告：对参赛作品技术报告包括作品链接、设计方案、实现方案、运行效果/测试结果、演示视频、特色创新等内容进行评审。
 
 作品要求
-详见主页《初赛作品提交说明》。
+详见主页《初赛作品提交说明》。 
 
+</pre>
 </details>
 
 ## 🎯 核心问题与背景
