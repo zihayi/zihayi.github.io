@@ -1,0 +1,7 @@
+<article class="entry">
+  <div class="entry-heading">
+    <h3><a href="{{ include.entry.url | relative_url }}">{{ include.entry.title | escape }}</a></h3>
+    {% if include.entry.date %}<time datetime="{{ include.entry.date | date_to_xmlschema }}">{{ include.entry.date | date: '%Y.%m.%d' }}</time>{% endif %}
+  </div>
+  {% if include.entry.description %}<p class="entry-description">{{ include.entry.description | escape }}</p>{% endif %}
+</article>

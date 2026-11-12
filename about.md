@@ -1,10 +1,8 @@
 ---
-layout: default
-title: About
+layout: page
+title: 关于
 permalink: /about/
 ---
-
-# 关于
 
 这里可以写你的个人介绍、技术方向、项目链接和联系方式。
 

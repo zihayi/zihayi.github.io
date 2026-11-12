@@ -1,41 +1,42 @@
 ---
 layout: default
-title: Home
+title: 首页
 ---
 
-# Personal Tech Blog
+<header class="home-intro">
+  <h1>日日渐进，<wbr>必有所得。</h1>
+  <p>记录工程实践、技术笔记，<br class="intro-break">和一些可复用的思考。</p>
+</header>
 
-记录工程实践、技术笔记和一些可复用的思考。
-
-<section class="hero-card">
-  <p class="eyebrow">Latest</p>
-  <h2>日日渐进，必有所得。</h2>
-  <p>一些碎碎念，。</p>
+<section class="home-section" aria-labelledby="latest-posts">
+  <div class="section-heading">
+    <h2 id="latest-posts">最新文章</h2>
+    <a class="section-link" href="{{ '/posts/' | relative_url }}">全部文章 <span class="entry-count">{{ site.posts.size }}</span></a>
+  </div>
+  {% if site.posts.size > 0 %}
+  <div class="entry-list">
+    {% for post in site.posts limit:5 %}
+    {% include entry.html entry=post %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">还没有文章，新的记录会出现在这里。</p>
+  {% endif %}
 </section>
 
-
-## 最新文章
-
-{% if site.posts.size > 0 %}
-{% for post in site.posts limit:5 %}
-
-- [{{ post.title }}]({{ post.url | relative_url }}) · {{ post.date | date: "%Y-%m-%d" }}
-{% endfor %}
-{% else %}
-暂无文章。
-{% endif %}
-
-[查看全部文章]({{ "/posts/" | relative_url }})
-
-## 最新笔记
-
+<section class="home-section" aria-labelledby="latest-notes">
+  <div class="section-heading">
+    <h2 id="latest-notes">最近笔记</h2>
+    <a class="section-link" href="{{ '/notes/' | relative_url }}">全部笔记 <span class="entry-count">{{ site.notes.size }}</span></a>
+  </div>
 {% assign latest_notes = site.notes | sort: "date" | reverse %}
-{% if latest_notes.size > 0 %}
-{% for note in latest_notes limit:5 %}
-- [{{ note.title }}]({{ note.url | relative_url }}){% if note.date %} · {{ note.date | date: "%Y-%m-%d" }}{% endif %}
-{% endfor %}
-{% else %}
-暂无笔记。
-{% endif %}
-
-[查看全部笔记]({{ "/notes/" | relative_url }})
+  {% if latest_notes.size > 0 %}
+  <div class="entry-list">
+    {% for note in latest_notes limit:5 %}
+    {% include entry.html entry=note %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">还没有笔记，随手记下的想法会放在这里。</p>
+  {% endif %}
+</section>

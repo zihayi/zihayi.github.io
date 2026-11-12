@@ -1,0 +1,35 @@
+<div class="post-layout">
+  <article class="article">
+    <header class="article-header">
+      <div class="article-meta">
+        <a href="{{ include.index_url | relative_url }}">{{ include.kind }}</a>
+        {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y 年 %-m 月 %-d 日' }}</time>{% endif %}
+      </div>
+      <h1>{{ page.title | escape }}</h1>
+      {% if page.description %}<p class="description">{{ page.description | escape }}</p>{% endif %}
+      {% if page.tags.size > 0 %}
+      <ul class="article-tags" aria-label="文章标签">
+        {% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </header>
+
+    <div class="prose article-body">
+      {{ content }}
+    </div>
+
+    <footer class="article-footer">
+      <a href="{{ include.index_url | relative_url }}">返回{{ include.kind }}列表</a>
+      <a href="#main-content">回到顶部</a>
+    </footer>
+  </article>
+
+  <aside class="post-toc" aria-label="本文目录" hidden>
+    <details open>
+      <summary>本文目录</summary>
+      <nav aria-label="章节导航">
+        <ol class="post-toc-list"></ol>
+      </nav>
+    </details>
+  </aside>
+</div>

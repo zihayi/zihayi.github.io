@@ -7,11 +7,23 @@
 - `_posts/`: 正式文章，文件名格式为 `YYYY-MM-DD-title.md`
 - `_notes/`: Markdown 笔记，适合记录短内容
 - `_layouts/`: 页面布局模板
-- `assets/css/style.css`: 浅色精简样式
+- `assets/css/style.css`: 暖白、苔绿的温润阅读风样式与设计变量
+- `assets/js/reading.js`: 文章与笔记目录、阅读位置提示
+- `_includes/`: 共用文章条目和阅读页结构
 - `index.md`: 首页
 - `posts.md`: 文章列表页
 - `notes.md`: 笔记列表页
 - `about.md`: 关于页
+
+## 本地预览与样式
+
+```powershell
+bundle exec jekyll serve --host 127.0.0.1
+```
+
+打开 `http://127.0.0.1:4000`。首页、列表和阅读页共用一套样式；正文最大宽度为 720px，桌面端显示侧边目录，小屏幕使用可展开目录。配色与字体集中在 `assets/css/style.css` 顶部的 `:root` 变量中，字体使用本机字体栈。
+
+设计参考：[Frontend Design](https://github.com/anthropics/skills/tree/main/skills/frontend-design) 的排版、留白与克制设计原则。
 
 ## 发布到 GitHub Pages
 
